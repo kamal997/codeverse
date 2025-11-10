@@ -31,7 +31,7 @@ export const Sidebar = () => {
             transition={{ duration: 0.3, ease: "easeOut" }}
             exit={{ x: -200 }}
             className={twMerge(
-              "px-4 sm:px-6 z-[100] py-6 sm:py-8 max-w-[24rem] w-[80vw] sm:w-[70vw] md:w-[60vw] lg:w-fit fixed lg:relative h-screen left-0 flex flex-col justify-between border-r shadow-sm",
+              "px-4 sm:px-6 z-[100] py-6 sm:py-8 max-w-[24rem] w-[80vw] sm:w-[70vw] md:w-[60vw] lg:w-fit fixed lg:sticky lg:top-0 lg:self-start h-screen left-0 flex flex-col justify-between border-r shadow-sm",
               themeClass("sidebarBg"),
               themeClass("sidebarDivider")
             )}
@@ -60,7 +60,7 @@ export const Sidebar = () => {
       </AnimatePresence>
       <button
         className={twMerge(
-          "fixed lg:hidden bottom-4 right-4 h-12 w-12 rounded-full backdrop-blur-sm flex items-center justify-center z-50 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95",
+          "fixed lg:hidden top-6 left-4 h-12 w-12 rounded-full backdrop-blur-sm flex items-center justify-center z-50 shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105 active:scale-95",
           themeClass("surface"),
           themeClass("border")
         )}

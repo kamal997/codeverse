@@ -18,12 +18,12 @@ import SingleProjectPage from './app/projects/[slug]/page.jsx';
 function Layout({ children }) {
   return (
     <AnimationSettingsProvider>
-      <div className="flex antialiased h-screen overflow-hidden">
+      <div className="flex antialiased min-h-screen lg:h-screen lg:overflow-hidden">
         <Sidebar />
-        <div className="lg:pl-2 flex-1 overflow-y-auto relative">
+        <div className="lg:pl-2 flex-1 overflow-y-auto relative lg:h-screen">
           <div aria-hidden className="pointer-events-none fixed inset-0 z-0 grid-bg" />
-          <div className="flex max-w-6xl mx-auto h-full">
-            <div className="flex-1 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:pl-8 lg:pr-4 md:pr-8">
+          <div className="w-full max-w-6xl mx-auto relative z-10 h-full">
+            <div className="flex-1 py-4 sm:py-6 lg:py-8 px-4 sm:px-6 lg:px-8 xl:px-10 relative z-10 h-full">
               {children}
               <Footer />
             </div>

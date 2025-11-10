@@ -15,7 +15,7 @@ export const Footer = () => {
 
       {/* content */}
       <div className={twMerge("max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8", themeClass("textSubtle"))}>
-        <div className="flex items-start justify-between gap-6">
+        <div className="flex flex-col md:flex-row items-start justify-between gap-6">
           {/* Brand / About */}
           <div className="w-full sm:w-1/2">
             <h3 className="text-sm font-semibold text-neutral-900 mb-2">Kamal Idris</h3>
@@ -51,7 +51,7 @@ export const Footer = () => {
         </div>
 
         {/* bottom line */}
-        <div className="mt-8 flex items-center justify-between text-[11px]">
+        <div className="mt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-2 md:gap-0 text-[11px]">
           <p>
             <span className="font-semibold text-neutral-800">{new Date().getFullYear()}</span> 
             &nbsp;— Individuelles Design von Kamal Idris

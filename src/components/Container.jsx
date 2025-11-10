@@ -6,7 +6,7 @@ export const Container = ({ children }) => {
   return (
     <main
       className={twMerge(
-        "relative max-w-5xxl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 lg:py-16 animate-fade-in overflow-hidden",
+        "relative w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-6 sm:py-10 lg:py-14 animate-fade-in",
         themeClass("containerBg")
       )}
     >
