@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  /* Brand Primary: Amber/Saffron */
+  --primary-50: #fffbeb;
+  --primary-100: #fef3c7;
+  --primary-200: #fde68a;
+  --primary-300: #fcd34d;
+  --primary-400: #fbbf24;
+  --primary-500: #f59e0b;
+  --primary-600: #d97706;
+  --primary-700: #b45309;
+  --primary-800: #92400e;
+  --primary-900: #78350f;
+
+  /* Brand Secondary: Teal */
+  --secondary-50: #f0fdfa;
+  --secondary-100: #ccfbf1;
+  --secondary-200: #99f6e4;
+  --secondary-300: #5eead4;
+  --secondary-400: #2dd4bf;
+  --secondary-500: #14b8a6;
+  --secondary-600: #0d9488;
+  --secondary-700: #0f766e;
+  --secondary-800: #115e59;
+  --secondary-900: #134e4a;
+
+  /* Neutral palette (unchanged) */
+  --neutral-50: #fafafa;
+  --neutral-100: #f5f5f5;
+  --neutral-200: #e5e5e5;
+  --neutral-300: #d4d4d4;
+  --neutral-400: #a3a3a3;
+  --neutral-500: #737373;
+  --neutral-600: #525252;
+  --neutral-700: #404040;
+  --neutral-800: #262626;
+  --neutral-900: #171717;
+  
+  /* Identity gradient uses brand primary→secondary */
+  --gradient-start: var(--primary-500);
+  --gradient-end: var(--secondary-500);
+
+  /* Grid background tuning variables (light mode only) */
+  --grid-line-light: rgba(0, 0, 0, 0.06);
+  --grid-opacity-light: 0.6;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-feature-settings: 'rlig' 1, 'calt' 1;
+}
+
+::selection {
+  background-color: var(--primary-200);
+  color: var(--primary-800);
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neutral-300);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neutral-400);
+}
+
+/* Animated grid background (light-only site) */
+.grid-bg {
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      var(--grid-line-light) 0px,
+      var(--grid-line-light) 1px,
+      transparent 1px,
+      transparent 32px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      var(--grid-line-light) 0px,
+      var(--grid-line-light) 1px,
+      transparent 1px,
+      transparent 32px
+    );
+  background-size: 32px 32px;
+  animation: grid-pan 24s linear infinite;
+  /* Light mode opacity for subtle but visible grid */
+  opacity: var(--grid-opacity-light);
+}
+
+@keyframes grid-pan {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 40px 40px;
+  }
+}
+
+/* Infinite marquee for logo rows */
+.marquee {
+  display: inline-flex;
+  gap: 2.5rem; /* ~gap-10 */
+  align-items: center;
+  animation: marquee 22s linear infinite;
+}
+.marquee:hover {
+  animation-play-state: paused;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

@@ -1,0 +1,101 @@
+import { Paragraph } from "./Paragraph";
+import { motion } from "framer-motion";
+
+export const About = () => {
+  const images = [
+    "https://images.unsplash.com/photo-1692544350322-ac70cfd63614?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1692374227159-2d3592f274c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1692005561659-cdba32d1e4a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+    "https://images.unsplash.com/photo-1692445381633-7999ebc03730?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60",
+  ];
+  return (
+    <div>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-10 my-10">
+        {images.map((image, index) => (
+          <motion.div
+            key={image}
+            initial={{
+              opacity: 0,
+              y: -50,
+              rotate: 0,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+              rotate: index % 2 === 0 ? 3 : -3,
+            }}
+            transition={{ duration: 0.2, delay: index * 0.1 }}
+          >
+            <img
+              src={image}
+              alt="about"
+              className="rounded-md object-cover transform rotate-3 shadow-xl block w-full h-40 md:h-60 hover:rotate-0 transition duration-200"
+            />
+          </motion.div>
+        ))}
+
+        {/* // <Image
+        //   src="https://images.unsplash.com/photo-1692544350322-ac70cfd63614?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
+        //   width={200}
+        //   height={400}
+        //   alt="about"
+        //   className="rounded-md object-cover transform rotate-3 shadow-xl block w-full h-40 md:h-60 hover:rotate-0 transition duration-200"
+        // />
+        // <Image
+        //   src="https://images.unsplash.com/photo-1692374227159-2d3592f274c9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fHx8&auto=format&fit=crop&w=800&q=60"
+        //   width={200}
+        //   height={400}
+        //   alt="about"
+        //   className="rounded-md object-cover transform -rotate-3 shadow-xl block w-full h-40 md:h-60  hover:rotate-0 transition duration-200"
+        // />
+        // <Image
+        //   src="https://images.unsplash.com/photo-1692005561659-cdba32d1e4a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        //   width={200}
+        //   height={400}
+        //   alt="about"
+        //   className="rounded-md object-cover transform rotate-3 shadow-xl block w-full h-40 md:h-60  hover:rotate-0 transition duration-200"
+        // />
+        // <Image
+        //   src="https://images.unsplash.com/photo-1692445381633-7999ebc03730?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzM3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=60"
+        //   width={200}
+        //   height={400}
+        //   alt="about"
+        //   className="rounded-md object-cover transform -rotate-3 shadow-xl block w-full h-40 md:h-60  hover:rotate-0 transition duration-200"
+        // /> */}
+      </div>
+
+      <div className="max-w-4xl">
+        <Paragraph className=" mt-4">
+          Hallo! Ich bin Kamal Idris, ein leidenschaftlicher Full-Stack-Entwickler mit über vier
+          Jahren Erfahrung in der freiberuflichen Softwareentwicklung. Zurzeit studiere ich an der
+          Technischen Universität Dortmund und arbeite an spannenden Projekten, die Technologie,
+          Design und Funktionalität miteinander verbinden.
+        </Paragraph>
+        <Paragraph className=" mt-4">
+          Ich liebe es, digitale Produkte zu entwickeln, die nicht nur zuverlässig und performant
+          sind, sondern auch ein ansprechendes Nutzererlebnis bieten. Mein Fokus liegt auf modernen
+          Technologien wie React, Node.js, Express, MongoDB, React Native, JavaScript, Python, Java
+          und PHP – mit denen ich skalierbare Web- und Mobile-Anwendungen entwickle.
+        </Paragraph>
+        <Paragraph className=" mt-4">
+          Was mich besonders auszeichnet, ist mein Auge für gutes Design und meine Leidenschaft für
+          sauberen, effizienten Code. Ich glaube fest daran, dass großartige Software sowohl funktional
+          als auch ästhetisch sein muss.
+        </Paragraph>
+        <Paragraph className=" mt-4">
+          Auf dieser Website teile ich meine Projekte, Ideen und Erfahrungen - für alle, die sich
+          für moderne Webentwicklung, mobile Apps und kreatives digitales Handwerk begeistern.
+        </Paragraph>
+        <Paragraph className=" mt-4">
+          💼 Aktuell bin ich auf der Suche nach einer Werkstudentenstelle im Bereich Web- oder
+          Softwareentwicklung, um meine praktischen Kenntnisse weiter zu vertiefen und spannende
+          Projekte in einem professionellen Umfeld zu unterstützen.
+        </Paragraph>
+        <Paragraph className=" mt-4">
+          Wenn Sie auf der Suche nach einem motivierten, kreativen und zuverlässigen Entwickler sind
+          - kontaktieren Sie mich gerne!
+        </Paragraph>
+      </div>
+    </div>
+  );
+}
